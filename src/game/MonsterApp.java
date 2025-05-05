@@ -61,9 +61,6 @@ public class MonsterApp {
         }
 
 
-
-
-
         // 5. 상태 출력
         System.out.println("\n================ [플레이어 상태창] ================");
         System.out.println("이름   : " + player.getName());

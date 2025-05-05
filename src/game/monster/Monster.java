@@ -48,6 +48,8 @@ public class Monster {
 	}
 
 
+    // 부모 클래스(Monster)의 toString()
+
     // 몬스터 상태를 문자열로 반환
     @Override
     public String toString() {
@@ -57,4 +59,10 @@ public class Monster {
           .append(" / 공격력: ").append(attackPower);
         return sb.toString();
     }
+
+    // 2. 자식 클래스(FireMonster)의 toString() 
+    // super.toString(); 은 바로 아래의 부모 클래스인 Monster의 toString() 메서드를 호출하는 거예요:
+
+    // [불 몬스터] 몬스터 이름: 파이어 드래곤 / 체력: 80 / 공격력: 30
+    // ㄴ이렇게 출력 하게     몬스터 이름~ = 자식에 작성이 되어있는 super 이다. 
 }
