@@ -46,10 +46,10 @@ public class MonsterApp {
 
         // 6. 몬스터 배열
         Monster[] monsters = {
-            new FireMonster("파이어 고블린", 60),
-            new IceMonster("아이스 슬라임", 50),
-            new BossMonster("드래곤", 150),
-            new Monster("기본 몬스터", 40)
+            new FireMonster("파이어 고블린", 60, 20),
+            new IceMonster("아이스 슬라임", 50, 15),
+            new BossMonster("드래곤", 150, 35),
+            new Monster("기본 몬스터", 40, 10)
         };
 
         // 7. 전투 루프
@@ -103,15 +103,10 @@ public class MonsterApp {
 			
 			Monster attacker = monsters[choice - 1];
 			if (attacker.getHp() > 0) {  // 살아있는 경우에만 반격
+                // ⭐ (다형성 오버라이딩) 이 부분 변경: 몬스터가 직접 Player를 공격 
 				System.out.println("\n[" + attacker.getName() + "의 반격]");
 				attacker.attack(player);
 			}
-
-
-            // ⭐ (다형성 오버라이딩) 이 부분 변경: 몬스터가 직접 Player를 공격 
-            System.out.println("\n[" + attacker.getName() + "의 반격]");
-            attacker.attack(player);  // 오버라이딩된 메서드 호출
-
 
             // 7-6. 플레이어 생존 확인
             if (player.getHp() <= 0) {

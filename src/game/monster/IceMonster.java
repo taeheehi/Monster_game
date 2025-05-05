@@ -5,8 +5,8 @@ import game.player.Player;
 // 얼음 속성 몬스터 클래스: Monster를 상속받아 얼음 공격 효과 부여
 public class IceMonster extends Monster {
 
-    public IceMonster(String name, int hp) {
-        super(name, hp);
+    public IceMonster(String name, int hp, int attackPower) {
+        super(name, hp, attackPower);
     }
 
     // 얼음 공격: 데미지 그대로, 공격 메시지만 다름

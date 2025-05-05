@@ -6,8 +6,8 @@ import game.player.Player;
 public class FireMonster extends Monster {
 
     // 생성자: 이름과 체력을 부모 Monster 클래스에 전달
-    public FireMonster(String name, int hp) {
-        super(name, hp);
+    public FireMonster(String name, int hp, int attackPower) {
+        super(name, hp, attackPower); 
     }
 
     // 공격받을 때 데미지를 5 더 많이 입는 효과

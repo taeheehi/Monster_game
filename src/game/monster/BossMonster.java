@@ -5,8 +5,8 @@ import game.player.Player;
 // 보스 몬스터 클래스: 강력한 데미지를 가하는 몬스터
 public class BossMonster extends Monster {
 
-    public BossMonster(String name, int hp) {
-        super(name, hp);
+    public BossMonster(String name, int hp, int attackPower) {
+        super(name, hp, attackPower); 
     }
 
     // 보스 공격: 데미지 +10

@@ -31,7 +31,7 @@ public class Player {
     public void setAttackPower(int attackPower) { this.attackPower = attackPower; }
     public void setHp(int hp) { this.hp = hp; }
 
-    // 플레이어가 몬스터를 공격
+    // 플레이어가 몬스터를 공격 (몬스터에게 데미지를 입히는 부분)
     public void attackMonster(Monster monster) {
         System.out.println(this.name + "이(가) " + monster.getName() + "을/를 공격합니다!");
         int newHp = monster.getHp() - this.attackPower;
