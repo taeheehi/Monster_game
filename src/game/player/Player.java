@@ -11,7 +11,7 @@ public class Player {
     // 기본 생성자
     public Player() {
         this.name = "플레이어";
-        this.attackPower = 10;
+        this.attackPower = 30;
         this.hp = 100;
     }
 

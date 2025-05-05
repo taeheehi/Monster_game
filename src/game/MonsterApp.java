@@ -30,12 +30,39 @@ public class MonsterApp {
             playerHp = 100;
         }
 
-        // 3. 공격력 랜덤 (10~30)
-        int randomAttackPower = (int)(Math.random() * 21) + 10;
+        // 3. 플레이어 공격력 설정 : (10~40) 사이의 값 -> 이거 때문에 절대 기본 생성자 가 실행이 안됌.
+        // int randomAttackPower = (int)(Math.random() * 31) + 10; // 
 
         // 4. 플레이어 객체 생성
-        Player player = new Player(playerName, randomAttackPower);
-        player.setHp(playerHp);
+        // Player player = new Player(playerName, randomAttackPower);
+        // player.setHp(playerHp);
+
+
+
+        // ✅ 여기부터 수정!
+        System.out.print("공격력을 직접 입력하시겠습니까? (숫자 입력 / 엔터 시 기본값 30): ");
+        String input = scanner.nextLine();
+
+        Player player;  // 선언
+
+        if (!input.isBlank()) {
+            try {
+                int attackPower = Integer.parseInt(input);
+                player = new Player(playerName, attackPower);  // 매개변수 생성자 사용
+            } catch (NumberFormatException e) {
+                System.out.println("숫자가 아닙니다. 기본 공격력 30으로 설정됩니다.");
+                player = new Player();  // 기본 생성자 호출
+                player.setName(playerName); // 이름 설정
+            }
+        } else {
+            // 아무것도 입력 안했을 때 → 기본 생성자 사용
+            player = new Player();  // ✅ 기본 생성자 호출!
+            player.setName(playerName);  // 이름만 덮어씌움
+        }
+
+
+
+
 
         // 5. 상태 출력
         System.out.println("\n================ [플레이어 상태창] ================");
